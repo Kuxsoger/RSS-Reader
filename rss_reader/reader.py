@@ -1,10 +1,10 @@
 """Parsing arguments and running reader."""
 
 import argparse
-import rss
 import sys
 
-from __init__ import __version__
+from rss_reader import __version__
+from rss_reader import rss
 
 
 def limit(value):
