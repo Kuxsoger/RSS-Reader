@@ -13,9 +13,12 @@ setup(
     python_requires='>=3.7',
     install_requires=[
         'beautifulsoup4',
+        'dateutil'
+        'ebooklib',
         'lxml',
         'feedparser',
         'httpretty',
+        'requests',
         'sqlitedict',
     ],
     packages=find_packages(),

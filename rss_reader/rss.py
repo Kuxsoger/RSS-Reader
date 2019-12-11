@@ -7,6 +7,7 @@ import json
 import logging
 
 from rss_reader import cache
+from rss_reader import converter
 
 
 def replace_links(soup, links):
@@ -57,6 +58,7 @@ def read_topics(rss):
         topic['links'] = [topic['link'] + ' (link)'] if topic['link'] else []
         if item.get('description', None):
             soup = bs4.BeautifulSoup(item['description'], 'lxml')
+            topic['raw_description'] = item['description']
             replace_links(soup, topic['links'])
             topic['description'] = soup.get_text().strip()
 
@@ -87,6 +89,10 @@ def print_json(rss):
     """Print topics in json format."""
     logging.info('Converting to json')
     feed_title = rss.get('parsed', {}).get('feed', {}).get('title', 'unknown')
+
+    for dct in rss['topics']:
+        dct.pop('raw_description', None)
+
     js = {'feed title': feed_title, 'topics': rss['topics']}
     print(json.dumps(js, indent=4, ensure_ascii=False))
 
@@ -139,7 +145,9 @@ def run_reader(args):
     if not rss['topics']:
         raise Exception('No news found')
 
-    if args.json:
+    if args.to_epub:
+        converter.convert_to_epub(rss)
+    elif args.json:
         print_json(rss)
     else:
         print_topics(rss)
