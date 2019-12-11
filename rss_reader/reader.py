@@ -26,6 +26,7 @@ def parse_args(args):
     parser.add_argument('--json', action='store_true', help='Print result as JSON in stdout')
     parser.add_argument('--version', action='version', version='RSS Reader ' + __version__, help='Print version info')
     parser.add_argument('--verbose', action='store_true', help='Outputs verbose status messages')
+    parser.add_argument('--date', type=str, help='Read from cache news with date given in YYYYMMDD format')
     return parser.parse_args(args)
 
 
