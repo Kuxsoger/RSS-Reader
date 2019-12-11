@@ -1,4 +1,4 @@
-INFO:root:Started with following args: Namespace(date=None, json=False, limit=None, source='https://example.com/rss/', verbose=True)
+INFO:root:Started with following args: Namespace(date=None, json=False, limit=None, output_path=None, source='https://example.com/rss/', to_epub=False, verbose=True)
 INFO:root:Getting rss
 INFO:root:NonXMLContentType found
 INFO:root:Read topics

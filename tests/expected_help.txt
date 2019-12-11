@@ -1,14 +1,17 @@
-usage: rss-reader [-h] [--limit LIMIT] [--json] [--version] [--verbose] [--date DATE] source
+usage: rss-reader [-h] [--limit LIMIT] [--json] [--version] [--verbose] [--date DATE] [--to-epub] [--output-path OUTPUT_PATH] source
 
 Pure Python command-line RSS reader.
 
 positional arguments:
-  source         RSS URL
+  source                RSS URL
 
 optional arguments:
-  -h, --help     show this help message and exit
-  --limit LIMIT  Limit news tops if this parameter provided
-  --json         Print result as JSON in stdout
-  --version      Print version info
-  --verbose      Outputs verbose status messages
-  --date DATE    Read from cache news with date given in YYYYMMDD format
+  -h, --help            show this help message and exit
+  --limit LIMIT         Limit news tops if this parameter provided
+  --json                Print result as JSON in stdout
+  --version             Print version info
+  --verbose             Outputs verbose status messages
+  --date DATE           Read from cache news with date given in YYYYMMDD format
+  --to-epub             Generate file with news in epub format
+  --output-path OUTPUT_PATH
+                        Path to new file where book will be placed
