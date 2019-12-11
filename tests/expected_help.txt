@@ -1,0 +1,13 @@
+usage: rss-reader [-h] [--limit LIMIT] [--json] [--version] [--verbose] source
+
+Pure Python command-line RSS reader.
+
+positional arguments:
+  source         RSS URL
+
+optional arguments:
+  -h, --help     show this help message and exit
+  --limit LIMIT  Limit news tops if this parameter provided
+  --json         Print result as JSON in stdout
+  --version      Print version info
+  --verbose      Outputs verbose status messages

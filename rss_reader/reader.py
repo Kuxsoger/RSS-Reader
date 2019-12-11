@@ -29,13 +29,9 @@ def parse_args(args):
     return parser.parse_args(args)
 
 
-def run():
+def run(raw_args=sys.argv[1:]):
     try:
-        args = parse_args(sys.argv[1:])
+        args = parse_args(raw_args)
         rss.run_reader(args)
     except Exception as exc:
-        print('Error:', exc)
-
-
-if __name__ == '__main__':
-    run()
+        print('Error: {}'.format(exc))
