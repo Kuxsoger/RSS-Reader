@@ -93,6 +93,12 @@ def run_reader(args):
 
     logging.info('Getting rss')
     rss = feedparser.parse(args.source)
+
+    if rss['bozo']:
+        if type(rss['bozo_exception']) is not feedparser.NonXMLContentType:
+            raise Exception('Wrong validate or no Internet connection.')
+        logging.info('NonXMLContentType found')
+
     feed_title = rss.feed.title
 
     logging.info('Read topics')

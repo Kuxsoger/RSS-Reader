@@ -1,0 +1,9 @@
+INFO:root:Started with following args: Namespace(json=False, limit=None, source='https://example.com/rss/', verbose=True)
+INFO:root:Getting rss
+INFO:root:NonXMLContentType found
+INFO:root:Read topics
+INFO:root:Set limit equals to count of items.
+INFO:root:Create topic
+INFO:root:Create topic
+INFO:root:Create topic
+INFO:root:Print news

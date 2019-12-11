@@ -1,0 +1,61 @@
+<rss version="2.0" 
+    xmlns:fan="http://www.fandango.com/namespaces/edialog">
+    <channel>
+        <title>New Movies</title>
+        <link><![CDATA[http://www.fandango.com/default.aspx?wssaffid=11840&wssac=123]]></link>
+        <description>See this week's top 10 New Movies on Fandango.com</description>
+        <language>en-us</language>
+        <copyright>Copyright 2019 Fandango</copyright>
+        <pubDate>Wed, 11 Dec 2019 09:14:42 GMT</pubDate>
+        <ttl>1440</ttl>
+        <image>
+            <url>https://images.fandango.com/r1.0.819/images/global/fandango_rss_logo.gif</url>
+            <title>New Movies</title>
+            <link><![CDATA[http://www.fandango.com/default.aspx?wssaffid=11840&wssac=123]]></link>
+        </image>
+        <item>
+            <title><![CDATA[Black Christmas (2019)]]></title>
+            <link><![CDATA[http://www.fandango.com/blackchristmas2019-220065/movie-overview?wssaffid=11840&wssac=123]]></link>
+            <description><![CDATA[<p><a href="http://www.fandango.com/blackchristmas2019-220065/movie-overview?wssaffid=11840&wssac=123"><img src="https://images.fandango.com/r1.0.819/ImageRenderer/111/168/images/no_image_111x168.jpg/220065/images/masterrepository/fandango/220065/blackchristmas2019.jpg" alt="Black Christmas (2019)" title="Black Christmas (2019)" border="0" /></a> Opens Friday, Dec 13, 2019</p><p><a href="http://www.fandango.com/blackchristmas2019-220065/movie-overview?wssaffid=11840&wssac=123">Movie Details</a><a href="http://www.fandango.com/movie-trailer/blackchristmas2019-trailer/220065?wssaffid=11840&wssac=123">Play Trailers</a></p><p><a href="http://www.fandango.com/blackchristmas2019-220065/movie-times?wssaffid=11840&wssac=123"><img src="https://images.fandango.com/r1.0.819//images/global/buy_tickets.gif" alt="Buy Tickets" title="Click here to see showtimes and buy tickets!" border="0" /></a></p>]]></description>
+            <author>affiliates@fandango.com</author>
+            <fan:isWideRelease><![CDATA[True]]></fan:isWideRelease>
+            <fan:trailer><![CDATA[http://www.fandango.com/movie-trailer/blackchristmas2019-trailer/220065]]></fan:trailer>
+            <fan:reviewLink><![CDATA[http://www.fandango.com/blackchristmas2019_220065/moviereviews]]></fan:reviewLink>
+            <fan:buyTickets><![CDATA[http://www.fandango.com/blackchristmas2019-220065/movie-times]]></fan:buyTickets>
+            <category>Top 10 New Movies</category>
+            <enclosure url="https://images.fandango.com/r1.0.819/ImageRenderer/111/168/images/no_image_111x168.jpg/220065/images/masterrepository/fandango/220065/blackchristmas2019.jpg" length="1" type="image/jpeg" />
+            <pubDate>Wed, 11 Dec 2019 09:14:42 GMT</pubDate>
+            <source url="http://www.fandango.com/rss/newmovies.rss?wssac=123&amp;wssaffid=11840">New Movies</source>
+        </item>
+        <item>
+            <title><![CDATA[Bombshell (2019)]]></title>
+            <link><![CDATA[http://www.fandango.com/bombshell2019-219964/movie-overview?wssaffid=11840&wssac=123]]></link>
+            <description><![CDATA[<p><a href="http://www.fandango.com/bombshell2019-219964/movie-overview?wssaffid=11840&wssac=123"><img src="https://images.fandango.com/r1.0.819/ImageRenderer/111/168/images/no_image_111x168.jpg/219964/images/masterrepository/fandango/219964/bombshell2019.jpg" alt="Bombshell (2019)" title="Bombshell (2019)" border="0" /></a> Opens Friday, Dec 13, 2019</p><p><a href="http://www.fandango.com/bombshell2019-219964/movie-overview?wssaffid=11840&wssac=123">Movie Details</a><a href="http://www.fandango.com/movie-trailer/bombshell2019-trailer/219964?wssaffid=11840&wssac=123">Play Trailers</a></p><p><a href="http://www.fandango.com/bombshell2019-219964/movie-times?wssaffid=11840&wssac=123"><img src="https://images.fandango.com/r1.0.819//images/global/buy_tickets.gif" alt="Buy Tickets" title="Click here to see showtimes and buy tickets!" border="0" /></a></p>]]></description>
+            <author>affiliates@fandango.com</author>
+            <fan:isWideRelease><![CDATA[True]]></fan:isWideRelease>
+            <fan:trailer><![CDATA[http://www.fandango.com/movie-trailer/bombshell2019-trailer/219964]]></fan:trailer>
+            <fan:reviewLink><![CDATA[http://www.fandango.com/bombshell2019_219964/moviereviews]]></fan:reviewLink>
+            <fan:buyTickets><![CDATA[http://www.fandango.com/bombshell2019-219964/movie-times]]></fan:buyTickets>
+            <category>Top 10 New Movies</category>
+            <enclosure url="https://images.fandango.com/r1.0.819/ImageRenderer/111/168/images/no_image_111x168.jpg/219964/images/masterrepository/fandango/219964/bombshell2019.jpg" length="1" type="image/jpeg" />
+            <pubDate>Wed, 11 Dec 2019 09:14:41 GMT</pubDate>
+            <source url="http://www.fandango.com/rss/newmovies.rss?wssac=123&amp;wssaffid=11840">New Movies</source>
+        </item>
+        <item>
+            <title><![CDATA[Jumanji: The Next Level]]></title>
+            <link><![CDATA[http://www.fandango.com/jumanji:thenextlevel-219414/movie-overview?wssaffid=11840&wssac=123]]></link>
+            <description><![CDATA[<p><a href="http://www.fandango.com/jumanji:thenextlevel-219414/movie-overview?wssaffid=11840&wssac=123"><img src="https://images.fandango.com/r1.0.819/ImageRenderer/111/168/images/no_image_111x168.jpg/219414/images/masterrepository/fandango/219414/jm2_online_1080x1350_tsr_hero_rd3ddcimx_01.jpg" alt="Jumanji: The Next Level" title="Jumanji: The Next Level" border="0" /></a> Opens Friday, Dec 13, 2019</p><p><a href="http://www.fandango.com/jumanji:thenextlevel-219414/movie-overview?wssaffid=11840&wssac=123">Movie Details</a><a href="http://www.fandango.com/movie-trailer/jumanji:thenextlevel-trailer/219414?wssaffid=11840&wssac=123">Play Trailers</a></p><p><a href="http://www.fandango.com/jumanji:thenextlevel-219414/movie-times?wssaffid=11840&wssac=123"><img src="https://images.fandango.com/r1.0.819//images/global/buy_tickets.gif" alt="Buy Tickets" title="Click here to see showtimes and buy tickets!" border="0" /></a></p>]]></description>
+            <author>affiliates@fandango.com</author>
+            <fan:isWideRelease><![CDATA[True]]></fan:isWideRelease>
+            <fan:trailer><![CDATA[http://www.fandango.com/movie-trailer/jumanji:thenextlevel-trailer/219414]]></fan:trailer>
+            <fan:reviewLink><![CDATA[http://www.fandango.com/jumanji:thenextlevel_219414/moviereviews]]></fan:reviewLink>
+            <fan:buyTickets><![CDATA[http://www.fandango.com/jumanji:thenextlevel-219414/movie-times]]></fan:buyTickets>
+            <category>Top 10 New Movies</category>
+            <enclosure url="https://images.fandango.com/r1.0.819/ImageRenderer/111/168/images/no_image_111x168.jpg/219414/images/masterrepository/fandango/219414/jm2_online_1080x1350_tsr_hero_rd3ddcimx_01.jpg" length="1" type="image/jpeg" />
+            <pubDate>Wed, 11 Dec 2019 09:14:40 GMT</pubDate>
+            <source url="http://www.fandango.com/rss/newmovies.rss?wssac=123&amp;wssaffid=11840">New Movies</source>
+        </item>
+        <fan:otherLink><![CDATA[http://www.fandango.com/moviesintheaters]]></fan:otherLink>
+        <fan:homepage><![CDATA[http://www.fandango.com]]></fan:homepage>
+    </channel>
+</rss>

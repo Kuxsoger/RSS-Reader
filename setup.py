@@ -10,11 +10,12 @@ setup(
     author='Andrey Kuksik',
     author_email='andrey.kuksik@gmail.com',
     url='https://github.com/Kuxsoger/RSS-Reader',
-    python_requires='>=3.8',
+    python_requires='>=3.7',
     install_requires=[
         'beautifulsoup4',
         'lxml',
         'feedparser',
+        'httpretty',
     ],
     packages=find_packages(),
     entry_points={
