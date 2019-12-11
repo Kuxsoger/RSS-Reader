@@ -89,10 +89,10 @@ def print_json(rss):
     """Print topics in json format."""
     logging.info('Converting to json')
     feed_title = rss.get('parsed', {}).get('feed', {}).get('title', 'unknown')
-    
+
     for dct in rss['topics']:
-        dct.pop('raw_description', None) 
-    
+        dct.pop('raw_description', None)
+
     js = {'feed title': feed_title, 'topics': rss['topics']}
     print(json.dumps(js, indent=4, ensure_ascii=False))
 

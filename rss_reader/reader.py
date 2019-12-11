@@ -1,7 +1,6 @@
 """Parsing arguments and running reader."""
 
 import argparse
-import os
 import sys
 
 from rss_reader import __version__
