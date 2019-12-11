@@ -13,7 +13,7 @@ from rss_reader import reader
 
 class TestReader(unittest.TestCase):
     """Test rss reader with all possible arguments."""
-
+    maxDiff = None
     @classmethod
     def setUpClass(cls):
         httpretty.enable()
