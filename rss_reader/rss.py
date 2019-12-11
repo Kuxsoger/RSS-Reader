@@ -74,7 +74,7 @@ def print_topics(rss):
     logging.info('Print news')
     feed_title = rss.get('parsed', {}).get('feed', {}).get('title', 'unknown')
     colorize = rss['args'].colorize
-    
+
     if colorize:
         print(colorama.Fore.RED, end='')
 
@@ -118,12 +118,12 @@ def print_json(rss):
         dct.pop('raw_description', None)
 
     js = {'feed title': feed_title, 'topics': rss['topics']}
-    
+
     if rss['args'].colorize:
         print(colorama.Fore.LIGHTBLUE_EX)
 
     print(json.dumps(js, indent=4, ensure_ascii=False))
-    
+
     if rss['args'].colorize:
         print(colorama.Fore.RESET)
 
