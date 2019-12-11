@@ -1,6 +1,8 @@
 """Contains functions for reading RSS feed."""
 
 import bs4
+import colorama
+import coloredlogs
 import feedparser
 import html
 import json
@@ -71,30 +73,59 @@ def print_topics(rss):
     """Print topics."""
     logging.info('Print news')
     feed_title = rss.get('parsed', {}).get('feed', {}).get('title', 'unknown')
+    colorize = rss['args'].colorize
+
+    if colorize:
+        print(colorama.Fore.RED, end='')
+
     print('Feed:', feed_title)
     for topic in rss['topics']:
+        if colorize:
+            print(colorama.Fore.LIGHTGREEN_EX, end='')
         print('\nTitle:', topic['title'])
+
+        if colorize:
+            print(colorama.Fore.LIGHTYELLOW_EX, end='')
         print('Date:', topic['date'])
+
+        if colorize:
+            print(colorama.Fore.LIGHTBLUE_EX, end='')
         print('Link:', topic['link'], end='\n\n')
+
+        if colorize:
+            print(colorama.Fore.LIGHTCYAN_EX, end='')
         print(topic['description'], end='\n\n')
 
+        if colorize:
+            print(colorama.Fore.BLUE, end='')
         links = topic['links']
         if links:
             print('Links:')
             for i, link in enumerate(links, 1):
                 print('[{}] - {}'.format(i, link))
 
+    if colorize:
+        print(colorama.Fore.RESET)
+
 
 def print_json(rss):
     """Print topics in json format."""
     logging.info('Converting to json')
+
     feed_title = rss.get('parsed', {}).get('feed', {}).get('title', 'unknown')
 
     for dct in rss['topics']:
         dct.pop('raw_description', None)
 
     js = {'feed title': feed_title, 'topics': rss['topics']}
+
+    if rss['args'].colorize:
+        print(colorama.Fore.LIGHTBLUE_EX)
+
     print(json.dumps(js, indent=4, ensure_ascii=False))
+
+    if rss['args'].colorize:
+        print(colorama.Fore.RESET)
 
 
 def read_from_url(args):
@@ -120,6 +151,10 @@ def read_from_url(args):
 
 def run_reader(args):
     """Read feed with given args."""
+    if args.colorize:
+        coloredlogs.install()
+        colorama.init()
+
     if args.verbose:
         logging.basicConfig(level=logging.INFO)
 

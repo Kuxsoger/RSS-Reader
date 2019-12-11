@@ -29,6 +29,7 @@ def parse_args(args):
     parser.add_argument('--date', type=str, help='Read from cache news with date given in YYYYMMDD format')
     parser.add_argument('--to-epub', action='store_true', help='Generate file with news in epub format')
     parser.add_argument('--output-path', type=str, help='Path to new file where book will be placed')
+    parser.add_argument('--colorize', action='store_true', help='Enable colorized mode')
     return parser.parse_args(args)
 
 
