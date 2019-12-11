@@ -1,4 +1,4 @@
-INFO:root:Started with following args: Namespace(json=False, limit=None, source='https://example.com/rss/', verbose=True)
+INFO:root:Started with following args: Namespace(date=None, json=False, limit=None, source='https://example.com/rss/', verbose=True)
 INFO:root:Getting rss
 INFO:root:NonXMLContentType found
 INFO:root:Read topics
@@ -6,4 +6,8 @@ INFO:root:Set limit equals to count of items.
 INFO:root:Create topic
 INFO:root:Create topic
 INFO:root:Create topic
+INFO:sqlitedict:opening Sqlite table 'unnamed' in
+INFO:root:Cache topic with link http://www.fandango.com/blackchristmas2019-220065/movie-overview?wssaffid=11840&wssac=123 from https://example.com/rss/
+INFO:root:Cache topic with link http://www.fandango.com/bombshell2019-219964/movie-overview?wssaffid=11840&wssac=123 from https://example.com/rss/
+INFO:root:Cache topic with link http://www.fandango.com/jumanji:thenextlevel-219414/movie-overview?wssaffid=11840&wssac=123 from https://example.com/rss/
 INFO:root:Print news

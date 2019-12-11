@@ -6,6 +6,8 @@ import html
 import json
 import logging
 
+from rss_reader import cache
+
 
 def replace_links(soup, links):
     """Replace <a> and <img> in BeautifulSoup with it text/title + [] contains index of link
@@ -29,7 +31,7 @@ def replace_links(soup, links):
     return links
 
 
-def read_topics(rss, limit):
+def read_topics(rss):
     """Read topics in feed according to limit
 
     if limit is greater than count of topics then read all topics
@@ -37,21 +39,24 @@ def read_topics(rss, limit):
     """
     result = []
 
-    if not limit or limit > len(rss.entries):
+    limit = rss['args'].limit
+    items = rss['parsed'].get('entries', [])
+    if not limit or limit > len(items):
         logging.info('Set limit equals to count of items.')
-        limit = len(rss.entries)
+        limit = len(items)
 
-    for item in rss.entries[:limit]:
+    for item in items[:limit]:
         logging.info('Create topic')
 
-        topic = {}
-        topic['title'] = html.unescape(item.title)
-        topic['date'] = item.published
-        topic['link'] = item.link
+        topic = {
+            'title': html.unescape(item.get('title', 'unknown')),
+            'date': item.get('published', 'unknown'),
+            'link': item.get('link', None),
+        }
 
-        topic['links'] = [topic['link'] + ' (link)'] if item.link else []
-        if item.description:
-            soup = bs4.BeautifulSoup(item.description, 'lxml')
+        topic['links'] = [topic['link'] + ' (link)'] if topic['link'] else []
+        if item.get('description', None):
+            soup = bs4.BeautifulSoup(item['description'], 'lxml')
             replace_links(soup, topic['links'])
             topic['description'] = soup.get_text().strip()
 
@@ -60,11 +65,12 @@ def read_topics(rss, limit):
     return result
 
 
-def print_topics(feed_title, topics):
+def print_topics(rss):
     """Print topics."""
     logging.info('Print news')
+    feed_title = rss.get('parsed', {}).get('feed', {}).get('title', 'unknown')
     print('Feed:', feed_title)
-    for topic in topics:
+    for topic in rss['topics']:
         print('\nTitle:', topic['title'])
         print('Date:', topic['date'])
         print('Link:', topic['link'], end='\n\n')
@@ -77,11 +83,33 @@ def print_topics(feed_title, topics):
                 print('[{}] - {}'.format(i, link))
 
 
-def print_json(feed_title, topics):
+def print_json(rss):
     """Print topics in json format."""
     logging.info('Converting to json')
-    js = {'feed title': feed_title, 'topics': topics}
+    feed_title = rss.get('parsed', {}).get('feed', {}).get('title', 'unknown')
+    js = {'feed title': feed_title, 'topics': rss['topics']}
     print(json.dumps(js, indent=4, ensure_ascii=False))
+
+
+def read_from_url(args):
+    """Read RSS feed from url and cache it."""
+    parsed = feedparser.parse(args.source)
+
+    if parsed['bozo']:
+        if type(parsed['bozo_exception']) is not feedparser.NonXMLContentType:
+            raise Exception('Wrong validate or no Internet connection.')
+        logging.info('NonXMLContentType found')
+
+    rss = {
+        'args': args,
+        'parsed': parsed,
+    }
+
+    logging.info('Read topics')
+    rss['topics'] = read_topics(rss)
+    cache.cache_topics(rss)
+
+    return rss
 
 
 def run_reader(args):
@@ -92,22 +120,26 @@ def run_reader(args):
     logging.info('Started with following args: {}'.format(args))
 
     logging.info('Getting rss')
-    rss = feedparser.parse(args.source)
 
-    if rss['bozo']:
-        if type(rss['bozo_exception']) is not feedparser.NonXMLContentType:
-            raise Exception('Wrong validate or no Internet connection.')
-        logging.info('NonXMLContentType found')
+    if args.date:
+        topics = cache.get_topics(args.source, args.date)
+        limit = args.limit
 
-    feed_title = rss.feed.title
+        if not limit or limit > len(topics):
+            logging.info('Set limit equals to count of topics')
+            limit = len(topics)
 
-    logging.info('Read topics')
-    topics = read_topics(rss, args.limit)
+        rss = {
+            'args': args,
+            'topics': topics[:limit],
+        }
+    else:
+        rss = read_from_url(args)
 
-    if not topics:
+    if not rss['topics']:
         raise Exception('No news found')
 
     if args.json:
-        print_json(feed_title, topics)
+        print_json(rss)
     else:
-        print_topics(feed_title, topics)
+        print_topics(rss)

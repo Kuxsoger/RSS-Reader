@@ -16,6 +16,7 @@ setup(
         'lxml',
         'feedparser',
         'httpretty',
+        'sqlitedict',
     ],
     packages=find_packages(),
     entry_points={

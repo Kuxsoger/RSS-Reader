@@ -1,4 +1,4 @@
-usage: rss-reader [-h] [--limit LIMIT] [--json] [--version] [--verbose] source
+usage: rss-reader [-h] [--limit LIMIT] [--json] [--version] [--verbose] [--date DATE] source
 
 Pure Python command-line RSS reader.
 
@@ -11,3 +11,4 @@ optional arguments:
   --json         Print result as JSON in stdout
   --version      Print version info
   --verbose      Outputs verbose status messages
+  --date DATE    Read from cache news with date given in YYYYMMDD format
