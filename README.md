@@ -51,4 +51,31 @@ optional arguments:
 ```
 
 # Caching
-News is stored in SQLite table.
+News is stored in SQLiteDict table.
+Format of news is dict:
+```
+{
+    'https://news.yahoo.com/rss/': 
+    {
+        '20191211':
+        {
+            'https://news.yahoo.com/turkey-retaliate-against-u-sanctions-075046557.html':
+            {
+                'title': 'Turkey says will retaliate against any sanctions ahead of U.S. vote',
+                'date': 'Wed, 11 Dec 2019 02:50:46 -0500',
+                'link': 'https://news.yahoo.com/turkey-retaliate-against-u-sanctions-075046557.html',
+                'description': '[image: Turkey says will retaliate against any sanctions ahead of U.S. vote][2]Turkey said on Wednesday it would retaliate against any U.S. sanctions over its purchase of Russian defense systems, adding that with Britain it had agreed to speed up a joint fighter jet program to meet Turkish defense needs.  U.S. lawmakers will vote - and likely pass - a defense bill later on Wednesday that calls for sanctions against Turkey over Ankara's decision to procure the S-400 defenses.  Turkey and the United States, NATO allies, have been at odds over the purchase.',
+                'raw_description': '<p><a href="https://news.yahoo.com/turkey-retaliate-against-u-sanctions-075046557.html"><img src="http://l2.yimg.com/uu/api/res/1.2/fcUcI61QMQXPduOMWku.Bw--/YXBwaWQ9eXRhY2h5b247aD04Njt3PTEzMDs-/https://media.zenfs.com/en-US/reuters.com/529ece937d127bfe076caafa6c8172bd" width="130" height="86" alt="Turkey says will retaliate against any sanctions ahead of U.S. vote" align="left" title="Turkey says will retaliate against any sanctions ahead of U.S. vote" border="0" ></a>Turkey said on Wednesday it would retaliate against any U.S. sanctions over its purchase of Russian
+defense systems, adding that with Britain it had agreed to speed up a joint fighter jet program to meet Turkish defense needs.  U.S. lawmakers will vote - and likely pass - a defense bill later on Wednesday that calls for sanctions against Turkey over Ankara's decision to procure the S-400 defenses.  Turkey and the United States, NATO allies, have been at odds over the purchase.<p><br clear="all">',
+                'links': [
+                    'https://news.yahoo.com/turkey-retaliate-against-u-sanctions-075046557.html (link)',
+                    'http://l2.yimg.com/uu/api/res/1.2/fcUcI61QMQXPduOMWku.Bw--/YXBwaWQ9eXRhY2h5b247aD04Njt3PTEzMDs-/https://media.zenfs.com/en-US/reuters.com/529ece937d127bfe076caafa6c8172bd (image)'
+                ]
+            },
+            ...
+        },
+        ...
+    },
+    ...
+}
+```
