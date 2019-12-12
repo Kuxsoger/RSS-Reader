@@ -15,9 +15,8 @@ setup(
         'beautifulsoup4',
         'colorama',
         'coloredlogs',
-        'dateutil'
+        'py-dateutil',
         'ebooklib',
-        'lxml',
         'feedparser',
         'httpretty',
         'requests',
