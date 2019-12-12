@@ -1,6 +1,13 @@
 # RSS Reader
 This is command line utility that recieves RSS URL and print news in human-readable format.
 
+# Installation
+```
+git clone https://github.com/Kuxsoger/RSS-Reader.git
+cd RSS-Reader
+python setup.py install
+```
+
 # Usage
 
 ```
@@ -78,4 +85,12 @@ defense systems, adding that with Britain it had agreed to speed up a joint figh
     },
     ...
 }
+```
+# Epub format
+With argument `--to-epub` you can place news in .epub file, where each chapter is topic with structure:
+```
+<h3>Title</h3>
+<h5>Date:</h5>
+<h5>Link:</h5>
+Content of topic
 ```
