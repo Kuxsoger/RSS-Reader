@@ -1,11 +1,13 @@
 # RSS Reader
-This is command line utility that recieves RSS URL and print news in human-readable format.
+It is command line utility that recieves RSS URL and print news in human-readable format.
 
 # Installation
 ```
-git clone https://github.com/Kuxsoger/RSS-Reader.git
-cd RSS-Reader
-python setup.py install
+$git clone https://github.com/Kuxsoger/RSS-Reader.git
+$cd RSS-Reader
+$python setup.py bdist bdist_wheel
+$cd dist
+$pip install rss-reader-1.5.0-py3-none-any.whl
 ```
 
 # Usage
@@ -31,7 +33,7 @@ optional arguments:
 ```
 
 # JSON structure
-
+With argument `--json` utility will print result in json format:
 ```
 {
     "feed title": "New Movies",
@@ -58,7 +60,7 @@ optional arguments:
 ```
 
 # Caching
-News is stored in SQLiteDict table.
+News is stored in SQLiteDict table. You can access them with arguments `--date` and `source`. The `source` must be an exact copy of еру one you entered using utility without `--date` argument.
 Format of news is dict:
 ```
 {
@@ -87,7 +89,7 @@ defense systems, adding that with Britain it had agreed to speed up a joint figh
 }
 ```
 # Epub format
-With argument `--to-epub` you can place news in .epub file, where each chapter is topic with structure:
+With argument `--to-epub` you can place news in .epub file, where each chapter is topic with html structure:
 ```
 <h3>Title</h3>
 <h5>Date:</h5>
